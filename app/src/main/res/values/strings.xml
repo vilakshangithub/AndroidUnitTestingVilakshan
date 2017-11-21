@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">AndroidUnitTesting</string>
+
+    <string name="add_button_text">Add</string>
+    <string name="empty_notes_text">No notes found</string>
 </resources>
