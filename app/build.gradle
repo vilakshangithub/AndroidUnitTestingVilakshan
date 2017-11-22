@@ -5,7 +5,7 @@ android {
     buildToolsVersion "25.0.3"
     defaultConfig {
         applicationId "com.android.vilakshansaxena.androidunittesting"
-        minSdkVersion 14
+        minSdkVersion 18
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -20,18 +20,11 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
+    //app related dependencies
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
-
-    // robolectric
-    testCompile 'org.robolectric:robolectric:3.4.2'
-    testCompile 'org.robolectric:shadows-support-v4:3.4-rc2'
-    compile 'io.reactivex:rxjava:1.1.5'
-    compile 'io.reactivex:rxandroid:1.2.0'
+    compile 'com.android.support:design:25.3.1'
     // Rx
     compile 'io.reactivex:rxandroid:1.1.0'
     compile 'io.reactivex:rxjava:1.1.0'
@@ -39,10 +32,6 @@ dependencies {
     compile 'com.google.dagger:dagger:2.0'
     provided 'com.google.dagger:dagger-compiler:2.0'
     provided 'org.glassfish:javax.annotation:10.0-b28'
-    // tests
-    testCompile 'junit:junit:4.12'
-    testCompile 'org.mockito:mockito-core:2.0.5-beta'
-    testCompile 'org.assertj:assertj-core:3.8.0'
     // StorIO
     compile 'com.pushtorefresh.storio:sqlite:1.8.0'
     // RxBinding
@@ -53,4 +42,40 @@ dependencies {
     compile 'com.squareup.retrofit2:retrofit-mock:2.0.2'
     compile 'com.jakewharton.rxbinding:rxbinding-recyclerview-v7:0.3.0'
     compile 'com.android.support:recyclerview-v7:25.3.1'
+    compile 'io.reactivex:rxjava:1.1.5'
+    compile 'io.reactivex:rxandroid:1.2.0'
+
+
+    // testing related dpendencies
+    androidTestCompile 'com.android.support:support-v4:25.3.1'
+    androidTestCompile 'com.android.support:support-annotations:25.3.1'
+    androidTestCompile 'com.android.support:recyclerview-v7:25.3.1'
+    androidTestCompile 'com.android.support:design:25.3.1'
+    androidTestCompile 'com.android.support:support-v4:25.3.1'
+    androidTestCompile 'com.android.support:appcompat-v7:25.3.1'
+
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-core:2.0.5-beta'
+    testCompile 'org.assertj:assertj-core:3.8.0'
+    // robolectric
+    testCompile 'org.robolectric:robolectric:3.4.2'
+    testCompile 'org.robolectric:shadows-support-v4:3.4-rc2'
+    //espresso
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    androidTestCompile 'com.android.support.test.espresso:espresso-contrib:2.2.2'
+    androidTestCompile 'com.android.support.test.espresso:espresso-intents:2.2.2'
+    androidTestCompile 'com.android.support.test.espresso:espresso-idling-resource:2.2.2'
+    //ui automator
+    androidTestCompile 'com.android.support.test.uiautomator:uiautomator-v18:2.1.2'
+    //others
+    androidTestCompile 'com.android.support.test:runner:0.5'
+    androidTestCompile 'com.android.support.test:rules:0.5'
+    androidTestCompile "com.crittercism.dexmaker:dexmaker:1.4"
+    androidTestCompile "com.crittercism.dexmaker:dexmaker-dx:1.4"
+    androidTestCompile "com.crittercism.dexmaker:dexmaker-mockito:1.4"
+    androidTestCompile 'org.hamcrest:hamcrest-all:1.3'
+
+
 }
