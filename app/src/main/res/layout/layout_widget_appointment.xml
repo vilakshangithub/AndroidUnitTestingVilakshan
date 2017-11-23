@@ -1,0 +1,129 @@
+<android.support.v7.widget.CardView
+    android:id="@+id/card_view_appointments"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@style/AppTheme"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:showDividers="middle">
+
+
+        <TextView
+            android:id="@+id/card_title_textview"
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:gravity="start|center_vertical"
+            android:paddingEnd="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingStart="10dp"
+            android:text="Calendar"/>
+
+        <include layout="@layout/layout_toolbar_message"/>
+
+        <RelativeLayout
+            android:id="@+id/relative_layout_card_active"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:visibility="gone">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view_event_appointments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/text_view_no_appointments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="No appointments"
+                android:visibility="gone"
+                tools:visibility="visible"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_layout_card_inactive"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_label_card_inactive_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                tools:text="No one can make you feel inferior without your consent"/>
+
+            <TextView
+                android:id="@+id/tv_label_card_inactive_practice_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                tools:text="For Practice Name"/>
+
+            <TextView
+                android:id="@+id/tv_label_card_inactive_body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="7dp"
+                android:gravity="center"
+                android:padding="10dp"
+                tools:text="Out of sync"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/relative_layout_card_active_footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            tools:visibility="gone">
+
+            <Button
+                android:id="@+id/view_all_appointments_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View All"
+                android:textAllCaps="true"/>
+
+            <Button
+                android:id="@+id/button_add_appointment"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Add appointment"
+                android:textAllCaps="true"/>
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/relative_layout_card_inactive_footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/button_card_inactive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:textAllCaps="true"
+                tools:text="Sync"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

@@ -8,4 +8,16 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppTheme.Toolbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar.Overflow</item>
+    </style>
+
+    <style name="ThemeOverlay.AppCompat.Dark.ActionBar.Overflow" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:itemBackground">@drawable/vc_error_circle</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
 </resources>
